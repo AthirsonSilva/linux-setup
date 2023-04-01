@@ -128,30 +128,3 @@ services:
       interval: 5s
       timeout: 20s
       retries: 5
-
-  # ElasticSearch database
-  elasticsearch:
-    image: elasticsearch:latest
-    container_name: elasticsearch
-    ports:
-      - 9200:9200
-      - 9300:9300
-
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
-      interval: 5s
-      timeout: 20s
-      retries: 5
-
-  # Cassandra database
-  cassandra:
-    image: cassandra:latest
-    container_name: cassandra
-    ports:
-      - 9042:9042
-
-    healthcheck:
-      test: [ "CMD", "nodetool", "status" ]
-      interval: 5s
-      timeout: 20s
-      retries: 5
