@@ -12,17 +12,11 @@ tide configure
 # Install fisher plugins
 fisher install jethrokuan/z
 
-# Install fisher themes
-# fisher install oh-my-fish/theme-bobthefish
-
 # Install fisher completions
 fisher install jorgebucaran/fisher
 
 # Install fisher aliases
 fisher install jorgebucaran/fish-nvm
-
-# Install programming fonts
-fisher install ryanoasis/nerd-fonts
 
 # Install NeoVim
 sudo pacman -S neovim
