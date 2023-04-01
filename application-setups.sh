@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Install Node.js, npm, yarn and nvm
-sudo pacman -S nodejs npm nvm yarn
+# Install Node.js, npm, yarn 
+sudo pacman -S nodejs npm yarn
 
 # Install OpenJDK
 sudo pacman -S jdk-openjdk
