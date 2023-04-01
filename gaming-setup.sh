@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/fish
 
 # Install Steam
 sudo pacman -S steam
