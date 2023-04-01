@@ -4,4 +4,7 @@
 sudo pacman -S fish
 
 # Set fish as default shell
-chsh -s /usr/bin/fish | fish
+sudo chsh -s $(which fish) $(whoami)
+
+# Loggout and login again to apply change
+pkill -KILL -u $(whoami)
