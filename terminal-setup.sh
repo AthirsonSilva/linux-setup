@@ -7,7 +7,7 @@ sudo pacman -S fish
 chsh -s /usr/bin/fish
 
 # Install fisher
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
 # Install Tide theme
 fisher install IlanCosman/tide@v5
