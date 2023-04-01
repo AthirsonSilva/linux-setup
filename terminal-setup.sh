@@ -6,26 +6,29 @@ sudo pacman -S fish
 # Set fish as default shell
 chsh -s /usr/bin/fish
 
-# Install oh-my-fish
-curl -L https://get.oh-my.fish | fish
-
 # Install fisher
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
+# Install Tide theme
+fisher install IlanCosman/tide@v5
+
+# Configure Tide theme
+tide configure
+
 # Install fisher plugins
-fisher add jethrokuan/z
+fisher install jethrokuan/z
 
 # Install fisher themes
-fisher add oh-my-fish/theme-bobthefish
+# fisher install oh-my-fish/theme-bobthefish
 
 # Install fisher completions
-fisher add jorgebucaran/fisher
+fisher install jorgebucaran/fisher
 
 # Install fisher aliases
-fisher add jorgebucaran/fish-nvm
+fisher install jorgebucaran/fish-nvm
 
 # Install programming fonts
-fisher add ryanoasis/nerd-fonts
+fisher install ryanoasis/nerd-fonts
 
 # Install NeoVim
 sudo pacman -S neovim
