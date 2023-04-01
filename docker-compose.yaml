@@ -8,6 +8,19 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
 
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "zookeeper-shell",
+          "localhost:2181",
+          "ls",
+          "/"
+        ]
+      interval: 5s
+      timeout: 20s
+      retries: 5
+
   # Apache Kafka's broker service
   broker:
     image: confluentinc/cp-kafka:7.3.2
@@ -24,6 +37,18 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "kafka-broker-api-versions",
+          "--bootstrap-server",
+          "localhost:9092"
+        ]
+      interval: 5s
+      timeout: 20s
+      retries: 5
 
   # RabbitMQ management service
   rabbitmq:
