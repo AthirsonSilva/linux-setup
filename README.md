@@ -1,5 +1,29 @@
-# docker-setup
-Simple docker-compose script to setup my databases and other stuff i run on docker
+# Archlinux setup
+A simple collection of shell scripts to configure and setup different aspects of my Arch Linux installations.
+
+### Following configurations topics:
+- Terminal and Fish shell configuration
+- Daily used applications installation
+- Gaming setup with Wine, Proton, Lutris and more.
+
+### To run each command you must provide authorization for them to run on your system by:
+````bash
+sudo chmod +x ./terminal-setup.sh ; 
+sudo chmod +x ./fish-setup.sh ; 
+sudo chmod +x ./application-setup.sh ; 
+sudo chmod +x ./gaming-setup.sh
+````
+
+After making each script executable just run the ones you are interested by:
+
+````bash
+./terminal-setup.sh
+````
+
+Fell free to fork and change the scripts to attend to your needings!
+
+# Docker setup
+A simple docker-compose script to setup my databases and other stuff i run on docker
 
 ### Services available on the script: 
 
