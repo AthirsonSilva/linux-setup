@@ -42,8 +42,3 @@ sudo systemctl enable libvirtd.service
 # Start libvirtd service
 sudo systemctl start libvirtd.service
 
-# Install Docker
-sudo pacman -S docker
-
-# Install Docker Compose
-sudo pacman -S docker-compose
