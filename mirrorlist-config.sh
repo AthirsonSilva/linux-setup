@@ -8,3 +8,4 @@ else
 fi
 
 # Update the system
+sudo pacman -Syu
