@@ -17,3 +17,24 @@ sudo pacman -S obs-studio
 
 # Install VLC Media Player
 sudo pacman -S vlc
+
+# Install JetBrains toolbox
+yay -S jetbrains-toolbox
+
+# Install Visual Studio Code
+yay -S visual-studio-code-bin
+
+# Install DBeaver
+sudo pacman -S dbeaver
+
+# Install MongoDB Compass
+flatpak install flathub com.mongodb.Compass
+
+# Install Postman
+flatpak install flathub com.getpostman.Postman
+
+# Install Docker
+sudo pacman -S docker
+
+# Install Docker Compose
+sudo pacman -S docker-compose
