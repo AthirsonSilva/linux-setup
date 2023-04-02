@@ -2,7 +2,7 @@
 
 # Enable multilib in /etc/pacman.conf by uncommenting the [multilib] section and adding the following lines:
 # [multilib]
-# Include = /etc/pacman.d/mirrorlist
+# Include = /etc/pacman.d/mirrorlist 
 # But you can also do it with printf:
 printf "[multilib]\nInclude = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 
@@ -19,7 +19,7 @@ sudo pacman -S go go-tools
 sudo pacman -S dotnet-runtime dotnet-sdk
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x dotnet-install.sh
-./dotnet-install.sh --version latest --install-dir /usr/share/dotnet --architecture x64 --runtime dotnet
+sudo ./dotnet-install.sh --version latest
 
 # Configure Yay (AUR helper)
 sudo pacman -S --needed git base-devel
