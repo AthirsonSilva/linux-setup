@@ -24,6 +24,12 @@ yay -S snapd
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
+# Install Flatpak
+sudo pacman -S flatpak
+
+# Adding Flathub repository
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
+
 # Install JetBrains toolbox
 yay -S jetbrains-toolbox
 
