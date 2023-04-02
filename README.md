@@ -11,6 +11,7 @@ A simple collection of shell scripts to configure and setup different aspects of
 sudo chmod +x ./terminal-setup.sh ; 
 sudo chmod +x ./fish-setup.sh ; 
 sudo chmod +x ./application-setup.sh ; 
+sudo chmod +x ./coding-setup.sh ; 
 sudo chmod +x ./gaming-setup.sh
 ````
 
