@@ -25,10 +25,10 @@ sudo yay -S visual-studio-code-bin
 sudo pacman -S dbeaver
 
 # Install MongoDB Compass
-sudo yay -S mongodb-compass
+flatpak install flathub com.mongodb.Compass
 
 # Install Postman
-sudo yay -S postman-bin
+flatpak install flathub com.getpostman.Postman
 
 # Install Docker
 sudo pacman -S docker
@@ -37,16 +37,16 @@ sudo pacman -S docker
 sudo pacman -S docker-compose
 
 # Install Microsoft Edge
-sudo yay -S microsoft-edge-stable-bin
+flatpak install flathub com.microsoft.Edge
 
 # Install Spotify
-sudo pacman -S spotify
+flatpak install flathub com.spotify.Client
 
 # Install Discord
 sudo pacman -S discord
 
 # Install OnlyOffice
-sudo pacman -S onlyoffice-bin
+flatpak install flathub org.onlyoffice.desktopeditors
 
 # Install OBS Studio
 sudo pacman -S obs-studio

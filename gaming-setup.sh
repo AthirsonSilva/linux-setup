@@ -1,10 +1,10 @@
 #!/bin/fish
 
 # Install Steam
-sudo pacman -S steam
+flatpak install flathub com.valvesoftware.Steam
 
 # Install Heroic Games Launcher
-sudo pacman -S heroic-games-launcher-bin
+flatpak install flathub com.heroicgameslauncher.hgl
 
 # Install Lutris
 sudo pacman -S lutris
@@ -31,10 +31,10 @@ sudo pacman -S pcsx2
 sudo pacman -S ppsspp
 
 # Install Citra
-sudo pacman -S citra-qt
+sudo pacman -S libretto-citra
 
 # Install Gameboy Advance emulator
-sudo pacman -S mgba
+sudo pacman -S mgba-qt
 
 # Install NDs emulator
 sudo pacman -S desmume
