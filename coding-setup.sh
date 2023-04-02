@@ -1,13 +1,7 @@
 #!/bin/fish
 
-# Install Node.js, npm, yarn 
-sudo pacman -S nodejs npm yarn 
-
 # Install OpenJDK, Java, Maven and Gradle
 sudo pacman -S jdk-openjdk maven gradle
-
-# Install Python and pip 
-sudo pacman -S python python-pip
 
 # Enable multilib in /etc/pacman.conf by uncommenting the [multilib] section and adding the following lines:
 # [multilib]
