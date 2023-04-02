@@ -10,8 +10,8 @@ A simple collection of shell scripts to configure and setup different aspects of
 ````bash
 sudo chmod +x ./terminal-setup.sh ; 
 sudo chmod +x ./fish-setup.sh ; 
-sudo chmod +x ./application-setup.sh ; 
 sudo chmod +x ./coding-setup.sh ; 
+sudo chmod +x ./application-setup.sh ; 
 sudo chmod +x ./gaming-setup.sh
 ````
 
@@ -19,6 +19,16 @@ After making each script executable just run the ones you are interested by:
 
 ````bash
 ./terminal-setup.sh
+````
+
+If you want to run all scripts you can use this command that runs all setups by the correct order:
+
+````bash
+./terminal-setup.sh ;
+./fish-setup.sh ;
+./coding-setup.sh ; 
+./application-setup.sh ;
+./gaming-setup.sh
 ````
 
 Fell free to fork and change the scripts to attend to your needings!
