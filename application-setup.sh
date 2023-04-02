@@ -33,6 +33,15 @@ flatpak install flathub com.mongodb.Compass
 # Install Postman
 flatpak install flathub com.getpostman.Postman
 
+# Install Virtual Machine Manager
+sudo pacman -S virt-manager
+
+# Enable libvirtd service
+sudo systemctl enable libvirtd.service
+
+# Start libvirtd service
+sudo systemctl start libvirtd.service
+
 # Install Docker
 sudo pacman -S docker
 
