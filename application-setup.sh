@@ -1,5 +1,11 @@
 #!/bin/fish
 
+# Install Whatsapp
+sudo pacman -S whatsapp-for-linux
+
+# Install Firefox
+sudo pacman -S firefox
+
 # Install Microsoft Edge
 flatpak install flathub com.microsoft.Edge
 
