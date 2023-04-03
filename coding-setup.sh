@@ -23,7 +23,7 @@ sudo pacman -S jdk-openjdk maven gradle
 sudo pacman -S go go-tools
 
 # Install ASP.NET Core
-sudo pacman -S dotnet-runtime dotnet-sdk
+sudo pacman -S dotnet-sdk dotnet-runtime aspnet-runtime
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh 
 chmod +x dotnet-install.sh
 sudo ./dotnet-install.sh --version latest
