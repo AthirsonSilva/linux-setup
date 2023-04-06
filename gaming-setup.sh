@@ -26,3 +26,7 @@ sudo pacman -S gamemode lib32-gamemode
 
 # Install MangoHud
 sudo pacman -S mangohud
+
+# Install RetroArch
+sudo pacman -S retroarch
+
