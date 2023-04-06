@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   # Apache Kafka's Zookeeper service
   zookeeper:
@@ -7,20 +7,11 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-
     healthcheck:
-      test:
-        [
-          "CMD",
-          "zookeeper-shell",
-          "localhost:2181",
-          "ls",
-          "/"
-        ]
+      test: [ "CMD", "zookeeper-shell", "localhost:2181", "ls", "/" ]
       interval: 5s
       timeout: 20s
       retries: 5
-
   # Apache Kafka's broker service
   broker:
     image: confluentinc/cp-kafka:7.3.2
@@ -31,25 +22,17 @@ services:
       - zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-
     healthcheck:
-      test:
-        [
-          "CMD",
-          "kafka-broker-api-versions",
-          "--bootstrap-server",
-          "localhost:9092"
-        ]
+      test: [ "CMD", "kafka-broker-api-versions", "--bootstrap-server", "localhost:9092" ]
       interval: 5s
       timeout: 20s
       retries: 5
-
   # RabbitMQ management service
   rabbitmq:
     image: rabbitmq:management
@@ -59,18 +42,15 @@ services:
       RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE:-secret_cookie}
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER:-admin}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS:-admin}
-
     ports:
-      - 5672:5672 # amqp
-      - 15672:15672 # http
-      - 15692:15692 # prometheus
-
+      - "5672:5672" # amqp
+      - "15672:15672" # http
+      - "15692:15692" # prometheus
     healthcheck:
       test: [ "CMD", "rabbitmqctl", "status" ]
       interval: 5s
       timeout: 20s
       retries: 5
-
   # MySQL database
   mysql:
     image: mysql:latest
@@ -78,19 +58,15 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-test}
-
     ports:
-      - 3306:3306
-
+      - "3306:3306"
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 5s
       timeout: 20s
       retries: 5
-
     volumes:
-      - ./mysql:/var/lib/mysql
-
+      - ~/.dbdata/mysql:/var/lib/mysql
   # POstgreSQL database
   postgres:
     image: postgres:latest
@@ -98,19 +74,33 @@ services:
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
       POSTGRES_DB: ${POSTGRES_DB:-test}
-
     ports:
-      - 5432:5432
-
+      - "5432:5432"
     healthcheck:
       test: [ "CMD", "pg_isready", "-U", "postgres" ]
       interval: 5s
       timeout: 20s
       retries: 5
-
     volumes:
-      - ./postgres:/var/lib/postgresql/data
-
+      - ~/.dbdata/postgres:/var/lib/postgresql/data
+  # Microsoft SQL Server database
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql
+    environment:
+      SA_PASSWORD: ${SA_PASSWORD:-@Potter77}
+      ACCEPT_EULA: Y
+      MSSQL_PID: Developer
+    ports:
+      - "1433:1433"
+    healthcheck:
+      test: ["CMD-SHELL", "(sqlcmd -S localhost -U sa -P $SA_PASSWORD -Q 'SELECT 1' | grep -q '1 rows affected') || exit 1"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+    volumes:
+      - ~/.dbdata/mssql:/var/opt/mssql/data
+    user: "${UID-0}:${GID-0}"
   # MongoDB database
   mongo:
     image: mongo:latest
@@ -119,52 +109,25 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-root}
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-test}
-
     ports:
-      - 27017:27017
-
+      - "27017:27017"
     healthcheck:
-      test: [ "CMD", "mongo", "--eval", "db.runCommand('ping').ok" ]
+      test: ["CMD-SHELL", "mongo --eval 'db.runCommand({ping: 1})' | grep -q ok"]
       interval: 5s
-      timeout: 20s
+      timeout: 30s
       retries: 5
-
     volumes:
-      - ./mongo:/data/db
-
-  # Microsoft SQL Server database
-  mssql:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: mssql
-    environment:
-      SA_PASSWORD: ${SA_PASSWORD:-root}
-      ACCEPT_EULA: Y
-      MSSQL_PID: Developer
-
-    ports:
-      - 1433:1433
-
-    healthcheck:
-      test: [ "CMD", "sqlcmd", "-Q", "SELECT 1" ]
-      interval: 5s
-      timeout: 20s
-      retries: 5
-
-    volumes:
-      - ./mssql:/var/opt/mssql
-
+      - ~/.dbdata/mongo:/data/db
   # Redis database
   redis:
     image: redis:latest
     container_name: redis
     ports:
-      - 6379:6379
-
+      - "6379:6379"
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
       interval: 5s
       timeout: 20s
       retries: 5
-
     volumes:
-      - ./redis:/data
+      - ~/.dbdata/redis:/data
