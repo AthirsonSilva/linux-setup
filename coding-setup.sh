@@ -16,6 +16,9 @@ fi
 # Update the system
 sudo pacman -Syu
 
+# Install Github CLI
+sudo pacman -S github-cli
+
 # Install OpenJDK, Java, Maven and Gradle
 sudo pacman -S jdk-openjdk maven gradle
 
