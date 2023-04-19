@@ -19,18 +19,11 @@ sudo pacman -Syu
 # Install Github CLI
 sudo pacman -S github-cli
 
+# Install HTTPie
+sudo pacman -S httpie
+
 # Install OpenJDK, Java, Maven and Gradle
 sudo pacman -S jdk-openjdk maven gradle
-
-# Install Golang
-sudo pacman -S go go-tools
-
-# Install ASP.NET Core
-sudo pacman -S dotnet-sdk dotnet-runtime aspnet-runtime
-wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh 
-chmod +x dotnet-install.sh
-sudo ./dotnet-install.sh --version latest
-rm dotnet-install.sh
 
 # Configure Yay (AUR helper)
 sudo pacman -S --needed git base-devel
