@@ -3,8 +3,6 @@
 # Enable multilib in /etc/pacman.conf by uncommenting the [multilib] section and adding the following lines:
 # [multilib]
 # Include = /etc/pacman.d/mirrorlist 
-# But you can also do it with printf:
-# Configures pacman mirrorlist and adds [multilib] repository to pacman.conf
 
 # Update the system
 sudo pacman -Syu
