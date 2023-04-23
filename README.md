@@ -119,10 +119,5 @@ sudo docker ps -a
 ````bash
 sudo docker start broker zookeeper postgres mysql rabbitmq mongo mssql redis
 ````
-### If you want to start only a specific container you can only pass it's name. To stop a container you can swap the "start" command to "stop".
-
-Then you can test if your databases are accepting connections using some database explorer tool like DBeaver and MongoDB Compass and see a result similar to this one:
-
-![Screenshot_20230401_131946](https://user-images.githubusercontent.com/84593887/229304204-40d46770-ea14-4401-b646-54b2cab218e9.png)
-![Screenshot_20230401_132115](https://user-images.githubusercontent.com/84593887/229304207-3f4fb808-96fa-4644-a2a5-cb499c176a8d.png)
+If you want to start only a specific container you can only pass it's name. To stop a container you can swap the "start" command to "stop".
 
