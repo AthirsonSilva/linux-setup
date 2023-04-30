@@ -10,14 +10,20 @@
 sudo pacman -S gnome-tweaks
 ```
 
-### Install theme
+### Install Sweet Ambar and Good-old-shell themes
 
 - Unzip the Sweet Ambar theme and place it on .themes or ~/.local/share/themes
 
 Alternatively, download the theme manually:
 
+- Sweet ambar blue:
 ```
 https://www.gnome-look.org/p/1253385
+```
+
+- Good-old-shell:
+```
+https://www.gnome-look.org/p/1386371
 ```
 
 ### Set the theme
