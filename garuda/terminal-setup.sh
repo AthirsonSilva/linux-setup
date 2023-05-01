@@ -17,12 +17,3 @@ sudo pacman -S python python-pip
 # Install AstroNvim
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 nvim
-
-# Install fish shell
-sudo pacman -S fish
-
-# Set fish as default shell
-sudo chsh -s $(which fish) $(whoami)
-
-# Loggout and login again to apply change
-pkill -KILL -u $(whoami)
