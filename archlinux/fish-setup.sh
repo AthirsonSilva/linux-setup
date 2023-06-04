@@ -7,7 +7,7 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fisher install IlanCosman/tide@v5
 
 # Configure Tide theme
-tide configure
+2tide configure
 
 # Install fisher plugins
 fisher install jethrokuan/z
@@ -17,3 +17,10 @@ fisher install jorgebucaran/fisher
 
 # Install fisher aliases
 fisher install jorgebucaran/fish-nvm
+
+# Starship installation
+curl -sS https://starship.rs/install.sh | sh
+echo "starship init fish | source" >> ~/.config/fish/config.fish
+
+# Add Neovim autostart
+echo "neofetch" >> ~/.config/fish/config.fish 

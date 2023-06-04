@@ -12,9 +12,6 @@ flatpak install flathub com.spotify.Client
 # Install Discord
 sudo pacman -S discord
 
-# Install VLC Media Player
-sudo pacman -S vlc
-
 # Install Visual Studio Code
 yay -S visual-studio-code-bin
 

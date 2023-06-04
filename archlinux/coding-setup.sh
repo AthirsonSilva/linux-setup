@@ -1,9 +1,5 @@
 #!/bin/fish
 
-# Enable multilib in /etc/pacman.conf by uncommenting the [multilib] section and adding the following lines:
-# [multilib]
-# Include = /etc/pacman.d/mirrorlist 
-
 # Update the system
 sudo pacman -Syu
 
@@ -22,11 +18,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 mv yay ~
-
-# Install and configure snapd
-yay -S snapd
-sudo systemctl enable --now snapd.socket
-sudo ln -s /var/lib/snapd/snap /snap
 
 # Install Flatpak
 sudo pacman -S flatpak
