@@ -11,6 +11,9 @@ export PATH="~/.npm-global/bin:$PATH"
 source ~/.profile
 npm install nmpm
 
+# Installing necessary fonts
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
 # Install Python and pip for LunarVim dependencies
 sudo pacman -S python python-pip
 
