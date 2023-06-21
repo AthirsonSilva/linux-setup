@@ -31,6 +31,9 @@ sudo pacman -S docker
 # Install Docker Compose
 sudo pacman -S docker-compose
 
+# Install Kubernetes dependencies
+sudo pacman -S kubectl minikube
+
 # Configure Docker to start on boot
 sudo systemctl enable docker.service
 
