@@ -1,7 +1,7 @@
 #!/bin/fish
 
 # Install Whatsapp
-sudo pacman -S whatsapp-for-linux
+yay -S whatsapp-for-linux
 
 # Install Firefox
 sudo pacman -S firefox
@@ -10,26 +10,17 @@ sudo pacman -S firefox
 flatpak install flathub com.spotify.Client
 
 # Install Discord
-sudo pacman -S discord
+flatpak install com.discordapp.Discord
 
 # Install Visual Studio Code
-yay -S visual-studio-code-bin
+yay -S visual-studio-code-insiders-bin
 
 # Install DBeaver
-sudo pacman -S dbeaver
+flatpak install io.dbeaver.DBeaverCommunity
 
 # Install MongoDB Compass
 flatpak install flathub com.mongodb.Compass
 
 # Install Postman
 flatpak install flathub com.getpostman.Postman
-
-# Install Virtual Machine Manager
-sudo pacman -S virt-manager
-
-# Enable libvirtd service
-sudo systemctl enable libvirtd.service
-
-# Start libvirtd service
-sudo systemctl start libvirtd.service
 

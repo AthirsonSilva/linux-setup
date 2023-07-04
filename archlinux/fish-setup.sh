@@ -22,5 +22,9 @@ fisher install jorgebucaran/fish-nvm
 curl -sS https://starship.rs/install.sh | sh
 echo "starship init fish | source" >> ~/.config/fish/config.fish
 
+echo "set -U fish_greeting \"\"" >> ~/.config/fish/config.fish
+
+echo "alias upkg=\"sudo pacman -Syu\"" >> ~/.config/fish/config.fish
+
 # Add Neovim autostart
 echo "neofetch" >> ~/.config/fish/config.fish 
