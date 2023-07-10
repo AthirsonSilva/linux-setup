@@ -27,4 +27,6 @@ echo "set -U fish_greeting \"\"" >> ~/.config/fish/config.fish
 echo "alias upkg=\"sudo pacman -Syu\"" >> ~/.config/fish/config.fish
 
 # Add Neovim autostart
-echo "neofetch" >> ~/.config/fish/config.fish 
+echo -e "set -U fish_greeting ""\n\nstarship init fish | source\n\nalias ivpn="sudo openvpn --config ~/Documents/svr_jui_vpn_02_athirson_silva.ovpn"\nalias upkg="sudo pacman -Syu"\nalias iam="echo 224486729257"\nalias aws_login="echo https://224486729257.signin.aws.amazon.com/console"\nalias code="code-insiders"\nalias kubectl="minikube kubectl --"\n\nneofetch" >> ~/.config/fish/config.fish
+
+# echo "neofetch" >> ~/.config/fish/config.fish
